@@ -1,0 +1,10 @@
+log/*.log
+tmp/**/*
+tmp/restart.txt
+doc/api
+doc/app
+.DS_Store
+*.log
+config/database.yml
+config/database.example.yml
+config/capistrano_database.rb

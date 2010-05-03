@@ -7,7 +7,7 @@ set :copy_strategy, :export
 set :copy_compression, :gzip
 
 # needs to be set when rake is not in standard location
-# set :rake, "/opt/ruby-enterprise-1.8.7-2009.10/bin/rake"
+set :rake, "/usr/bin/rake"
 set :rails_env,      "development"
 set :migrate_env,    ""
 set :migrate_target, :current

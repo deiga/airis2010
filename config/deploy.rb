@@ -27,9 +27,7 @@ set :deploy_to, "/home/airedale/cap"
 set :user, "airedale"
 set :scm_username, "deiga"
 
-role :web, "airedalenterrieri.fi"                   # Your HTTP server, Apache/etc
-role :app, "airedalenterrieri.fi", :primary => true # This may be the same as your `Web` server
-role :db,  "airedalenterrieri.fi", :primary => true # This is where Rails migrations will run
+server "airedalenterrieri.fi", :app, :web, :db, :primary => true
 
 namespace :deploy do
 #   task :start {}

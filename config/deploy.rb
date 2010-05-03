@@ -47,10 +47,10 @@ namespace :deploy do
   #     run "#cd #{current_path} ; #{rake} db:reset"
   #   end
 
-  #desc "Run migrate with trace"
-  #task :migrate do
-  #  run "cd #{current_path}; #{rake} --trace RAILS_ENV=#{rails_env} db:migrate"
-  #end
+  desc "Run migrate with trace"
+  task :migrate do
+    run "cd #{current_path}; #{rake} --trace RAILS_ENV=#{rails_env} db:migrate"
+  end
 end
 
 after "deploy:symlink", "deploy:migrate"

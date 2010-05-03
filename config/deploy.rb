@@ -67,4 +67,9 @@ namespace :logs do
   task :prod do
     run "tail -n 100 #{current_path}/log/production.log"
   end
+
+  desc "Show last 100 lines from development log"
+  task :dev do
+    run "tail -n 100 #{current_path}/log/development.log"
+  end
 end

@@ -3,7 +3,8 @@ class StaticController < ApplicationController
   rescue_from ActionView::MissingTemplate, :with => :invalid_page
 
   def index
-    @News = Announcement.all(:conditions => "notification = 0", :order => "created_at DESC")
+    @news = Announcement.all(:conditions => "NOT notification", :order => "created_at DESC")
+    @notices = Announcement.all(:conditions => "notification", :order => "created_at DESC")
   end
 
   def show

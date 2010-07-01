@@ -1,0 +1,9 @@
+.anno-item > h4 , .anno-item > p {
+  margin: 0;
+  padding: 0;
+}
+
+.anno-item {
+  padding: 0 0.5em 1em 1em;
+  width: 80%;
+}

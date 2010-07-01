@@ -9,6 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20100701114914) do
+
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "notification", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

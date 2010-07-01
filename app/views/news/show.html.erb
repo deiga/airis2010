@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @news.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @news.description %>
+</p>
+
+<p>
+  <b>Notification:</b>
+  <%=h @news.notification %>
+</p>
+
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_path %>

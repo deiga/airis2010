@@ -30,14 +30,17 @@ set :scm_username, "deiga"
 server "airedalenterrieri.fi", :app, :web, :db, :primary => true
 
 namespace :deploy do
-#   task :start {}
-#   task :stop {}
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
+  task :start, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
+  end
+
+  task :stop, :roles => :app do
+    # Do nothing.
+  end
+
   desc "Tell the Server to restart the app"
   task :restart do
-    run "touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "touch #{File.join(current_release,'tmp','restart.txt')}"
   end
 
   # desc "Reset database on server"
@@ -47,7 +50,7 @@ namespace :deploy do
 
   desc "Run migrate with trace"
   task :migrate do
-    run "cd #{current_path}; #{rake} --trace RAILS_ENV=#{rails_env} db:migrate"
+    run "cd #{current_release}; #{rake} --trace RAILS_ENV=#{rails_env} db:migrate"
   end
 end
 
@@ -63,11 +66,11 @@ after "deploy:symlink", "deploy:migrate"
 namespace :logs do
   desc "Show last 100 lines from production log"
   task :prod do
-    run "tail -n 100 #{current_path}/log/production.log"
+    run "tail -n 100 #{current_release}/log/production.log"
   end
 
   desc "Show last 100 lines from development log"
   task :dev do
-    run "tail -n 100 #{current_path}/log/development.log"
+    run "tail -n 100 #{current_release}/log/development.log"
   end
 end

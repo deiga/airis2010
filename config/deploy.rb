@@ -35,9 +35,9 @@ namespace :deploy do
 #   task :restart, :roles => :app, :except => { :no_release => true } do
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
-  desc "Tell Mongrel to restart the app"
+  desc "Tell the Server to restart the app"
   task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
+    run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
   # desc "Reset database on server"

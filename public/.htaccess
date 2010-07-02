@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^new.airedalenterrieri.fi$
+RewriteRule ^(.*)$ http://127.0.0.1:12002%{REQUEST_URI} [P,QSA,L]

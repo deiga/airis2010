@@ -3,6 +3,10 @@
   margin-right: 1em;
 }
 
+#news {
+  padding-left:1em;
+}
+
 .anno-item > h4 , .anno-item > p {
   margin: 0;
   padding: 0;

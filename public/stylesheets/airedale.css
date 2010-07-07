@@ -1,10 +1,33 @@
-#menu {
-  float: left;
-  margin-right: 1em;
+.menu {
+  margin: 0;
+  font-size: 80% /*smaller*/;
+  position: fixed;
+  top: 4em;
+  left: 2em;
+  width: 14em;
+  right: auto;
+  z-index: 1;
+}
+
+.menu > ul {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.3em 0.4em;
+  background: #B45D05;
+  border: 1px solid #FD840C;
+}
+
+.page {
+  position: relative;
+  margin: 0 20em 0 12em;
+  margin-left: 12em;
+  background-color: #CD853F;
+  padding: 0.5em 0 0 2em;
 }
 
 #news {
-  padding-left:1em;
+  padding-left: 1em;
 }
 
 .anno-item > h4 , .anno-item > p {

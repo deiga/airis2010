@@ -48,13 +48,18 @@ namespace :deploy do
   #     run "#cd #{current_path} ; #{rake} db:reset"
   #   end
 
+  desc "Symlink to get outside access working"
+  task :symlink_server do
+    run "ln -nfs #{current_release} /home/airedale/rails_apps/new"
+  end
+
   desc "Run migrate with trace"
   task :migrate do
     run "cd #{current_release}; #{rake} --trace RAILS_ENV=#{rails_env} db:migrate"
   end
 end
 
-after "deploy:symlink", "deploy:migrate"
+after "deploy:symlink", "deploy:symlink_server", "deploy:migrate"
 
 # namespace :app do
 #   desc "Run sample data on production"

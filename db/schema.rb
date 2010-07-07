@@ -1,4 +1,4 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file,
+# This file is auto-generated from the current state of the database. Instead of editing this file, 
 # please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100701122304) do
+ActiveRecord::Schema.define(:version => 20100707092446) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -18,4 +18,24 @@ ActiveRecord::Schema.define(:version => 20100701122304) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.string   "location"
+    t.date     "startdate"
+    t.integer  "duration",    :default => 1
+    t.text     "description"
+    t.text     "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "notification", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end

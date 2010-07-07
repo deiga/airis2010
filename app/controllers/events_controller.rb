@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
+    @url_reg = /^\/([a-z]+)\/([0-9]+)$/
 
     respond_to do |format|
       format.html # show.html.erb

@@ -2,8 +2,8 @@
   margin: 0;
   font-size: 80% /*smaller*/;
   position: fixed;
-  top: 4em;
-  left: 2em;
+  top: 5em;
+  left: 1%;
   width: 14em;
   right: auto;
   z-index: 1;
@@ -14,16 +14,27 @@
   list-style-type: none;
   margin: 0;
   padding: 0.3em 0.4em;
-  background: #B45D05;
+/*  background: #B45D05;*/
   border: 1px solid #FD840C;
+  background-color: transparent;
 }
 
 .page {
   position: relative;
-  margin: 0 20em 0 12em;
-  margin-left: 12em;
-  background-color: #CD853F;
-  padding: 0.5em 0 0 2em;
+  margin: 0 20% 0 13em;
+/*  background-color: #CD853F;*/
+  padding: 0.5em 0 0 1em;
+  border: medium solid black;
+}
+
+.pics {
+  position: absolute;
+  border: thin solid black;
+  padding: 0.5em;
+  left: 81%;
+  width: 200px;
+  height: 600px;
+  top: 4em;
 }
 
 #news {

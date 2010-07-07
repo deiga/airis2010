@@ -1,0 +1,16 @@
+<h2>Tapahtumat</h2>
+
+<div id="events">
+  <% if !@events.blank? %>
+    <% for item in @events %>
+      <div class="event">
+        <h3><%= item.startdate.strftime("%m.%d.%Y") %> - <%= item.title %></h3>
+        <em><%= item.location %></em>
+        <p><%= item.description %></p>
+        <%= link_to 'Lue lisää', item %>
+      </div>
+    <% end %>
+  <% else %>
+    <h3>Ei tapahtumia tällä hetkellä!</h3>
+  <% end %>
+</div>

@@ -1,12 +1,17 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :events
 
+  map.resources :events
   map.resources :announcements
 
   map.static ':page',
     :controller   => 'static',
     :action       => 'show',
     :requirements => { :page => /[a-z]+/ }
+
+  map.connect 'tapahtumat/:id',
+    :controller => 'events',
+    :action => 'show',
+    :requirements => { :id => /[0-9]+/ }
 
   map.root :controller => 'static'
 

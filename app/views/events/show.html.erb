@@ -1,34 +1,35 @@
 <p>
-  <b>Title:</b>
+  <strong>Otiskko:</strong>
   <%=h @event.title %>
 </p>
 
 <p>
-  <b>Location:</b>
+  <strong>Paikka:</strong>
   <%=h @event.location %>
 </p>
 
 <p>
-  <b>Startdate:</b>
+  <strong>Aloituspäivämäärä:</strong>
   <%=h @event.startdate %>
 </p>
 
 <p>
-  <b>Duration:</b>
-  <%=h @event.duration %>
+  <strong>Tapahtuman kesto:</strong>
+  <%=h @event.duration %> pv
 </p>
 
 <p>
-  <b>Description:</b>
+  <strong>Lyhyt esittely:</strong>
   <%=h @event.description %>
 </p>
 
 <p>
-  <b>Info:</b>
+  <strong>Lisätietoja:</strong>
   <%=h @event.info %>
 </p>
 <% if @url_reg.match(request.request_uri)[1] == 'tapahtumat' -%>
-  <h1>HELLO!</h1>
+
+<% else -%>
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
 <% end -%>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>

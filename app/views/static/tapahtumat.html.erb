@@ -7,7 +7,7 @@
         <h3><%= item.startdate.strftime("%m.%d.%Y") %> - <%= item.title %></h3>
         <em><%= item.location %></em>
         <p><%= item.description %></p>
-        <%= link_to 'Lue lisää', item %>
+        <%= link_to 'Lue lisää', url_for('tapahtumat/'+item.id.to_s) %>
       </div>
     <% end %>
   <% else %>

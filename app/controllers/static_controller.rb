@@ -10,8 +10,9 @@ class StaticController < ApplicationController
   def show
     if params[:page] == 'tapahtumat'
       @events = Event.all
+    elsif params[:page] == 'kasvattajat'
+      @kennels = Kennel.all
     end
-
     render params[:page]
   end
 

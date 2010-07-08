@@ -1,0 +1,24 @@
+<h2>Kasvattajat</h2>
+
+<% if !@kennels.blank? %>
+  <table id="kennels">
+    <thead>
+      <th>Kennel name</th>
+      <th>Location</th>
+      <th>Owner name</th>
+      <th>Phonenumber</th>
+      <th>E-Mail</th>
+      <th>Homepage</th>
+    </thead>
+  <% for item in @kennels %>
+      <strong><%= item.kennel_name %></strong>
+      <%= item.owner_name %>
+      <%= item.phone %>
+      <%= item.email %>
+      <em><%= item.location %></em>
+      <%= link_to 'Kotisivut', item.homepage %>
+  <% end %>
+  </table>
+<% else %>
+  <h3>Ei kasvattajia tällä hetkellä!</h3>
+<% end %>

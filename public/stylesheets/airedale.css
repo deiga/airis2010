@@ -42,6 +42,34 @@
   padding-left: 1em;
 }
 
+#kennels {
+  border-collapse: collapse;
+}
+
+#kennels thead {
+  border-bottom: medium solid black;
+}
+
+#kennels th {
+  padding: 0 1em;
+  text-align: left;
+}
+
+#kennels th:last-child {
+  padding: 0 10em 0 1em;
+}
+
+#kennels td {
+  text-align: center;
+}
+
+#kennels tr {
+  border-bottom: thin dashed black;
+}
+
+#kennels tr:last-child {
+  border: none;
+}
 
 .anno-item > h4 , .anno-item > p {
   margin: 0;

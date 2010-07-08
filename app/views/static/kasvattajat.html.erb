@@ -1,7 +1,7 @@
 <h2>Kasvattajat</h2>
 
 <% if !@kennels.blank? %>
-  <table id="kennels" cellspacing="5" cellpadding="5">
+  <table id="kennels" cellspacing="0" summary="Listing of all Airedale terrier kennels, who are members of the assosiaction">
     <thead>
       <th>Kennel name</th>
       <th>Location</th>
@@ -18,7 +18,7 @@
       <td><%= item.owner_name %></td>
       <td><%= item.phone %></td>
       <td><%= item.email %></td>
-      <td><%= link_to 'Kotisivut', item.homepage %></td>
+      <td><%= link_to item.homepage %></td>
     </tr>
   <% end %>
     </tbody>

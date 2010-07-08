@@ -1,0 +1,33 @@
+<p>
+  <b>Kennel name:</b>
+  <%=h @kennel.kennel_name %>
+</p>
+
+<p>
+  <b>Owner name:</b>
+  <%=h @kennel.owner_name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @kennel.phone %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @kennel.location %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @kennel.email %>
+</p>
+
+<p>
+  <b>Homepage:</b>
+  <%=h @kennel.homepage %>
+</p>
+
+
+<%= link_to 'Edit', edit_kennel_path(@kennel) %> |
+<%= link_to 'Back', kennels_path %>

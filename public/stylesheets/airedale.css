@@ -7,6 +7,7 @@
   width: 14em;
   right: auto;
   z-index: 1;
+  text-align: center;
 }
 
 .menu > ul {
@@ -23,7 +24,7 @@
   position: relative;
   margin: 0 20% 0 13em;
 /*  background-color: #CD853F;*/
-  padding: 0.5em 0 0 1em;
+  padding: 0.5em 0 0.5em 1em;
   border: medium solid black;
 }
 
@@ -37,9 +38,10 @@
   top: 4em;
 }
 
-#news {
+#news , #notice {
   padding-left: 1em;
 }
+
 
 .anno-item > h4 , .anno-item > p {
   margin: 0;

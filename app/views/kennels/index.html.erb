@@ -1,0 +1,30 @@
+<h1>Listing kennels</h1>
+
+<table>
+  <tr>
+    <th>Kennel name</th>
+    <th>Owner name</th>
+    <th>Phone</th>
+    <th>Location</th>
+    <th>Email</th>
+    <th>Homepage</th>
+  </tr>
+
+<% @kennels.each do |kennel| %>
+  <tr>
+    <td><%=h kennel.kennel_name %></td>
+    <td><%=h kennel.owner_name %></td>
+    <td><%=h kennel.phone %></td>
+    <td><%=h kennel.location %></td>
+    <td><%=h kennel.email %></td>
+    <td><%=h kennel.homepage %></td>
+    <td><%= link_to 'Show', kennel %></td>
+    <td><%= link_to 'Edit', edit_kennel_path(kennel) %></td>
+    <td><%= link_to 'Destroy', kennel, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New kennel', new_kennel_path %>

@@ -1,7 +1,7 @@
 <h2>Kasvattajat</h2>
 
 <% if !@kennels.blank? %>
-  <table id="kennels">
+  <table id="kennels" cellspacing="5" cellpadding="5">
     <thead>
       <th>Kennel name</th>
       <th>Location</th>
@@ -10,14 +10,18 @@
       <th>E-Mail</th>
       <th>Homepage</th>
     </thead>
+    <tbody>
   <% for item in @kennels %>
-      <strong><%= item.kennel_name %></strong>
-      <%= item.owner_name %>
-      <%= item.phone %>
-      <%= item.email %>
-      <em><%= item.location %></em>
-      <%= link_to 'Kotisivut', item.homepage %>
+    <tr>
+      <td><strong><%= item.kennel_name %></strong></td>
+      <td><em><%= item.location %></em></td>
+      <td><%= item.owner_name %></td>
+      <td><%= item.phone %></td>
+      <td><%= item.email %></td>
+      <td><%= link_to 'Kotisivut', item.homepage %></td>
+    </tr>
   <% end %>
+    </tbody>
   </table>
 <% else %>
   <h3>Ei kasvattajia tällä hetkellä!</h3>

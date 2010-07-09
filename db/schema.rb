@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100708092758) do
+ActiveRecord::Schema.define(:version => 20100709184739) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(:version => 20100708092758) do
     t.string   "title"
     t.text     "description"
     t.boolean  "notification", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trimmers", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "ponumber"
+    t.string   "location"
+    t.string   "phone"
+    t.string   "homepage"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

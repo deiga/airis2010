@@ -11,7 +11,7 @@ class StaticController < ApplicationController
     if params[:page] == 'tapahtumat'
       @events = Event.all
     elsif params[:page] == 'kasvattajat'
-      @kennels = Kennel.all
+      @kennels = Kennel.find(:all, :order => "location DESC")
     end
     render params[:page]
   end

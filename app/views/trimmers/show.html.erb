@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @trimmer.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @trimmer.address %>
+</p>
+
+<p>
+  <b>Ponumber:</b>
+  <%=h @trimmer.ponumber %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @trimmer.location %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @trimmer.phone %>
+</p>
+
+<p>
+  <b>Homepage:</b>
+  <%=h @trimmer.homepage %>
+</p>
+
+
+<%= link_to 'Edit', edit_trimmer_path(@trimmer) %> |
+<%= link_to 'Back', trimmers_path %>

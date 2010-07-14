@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
+  map.root :controller => 'static'
+
   map.resources :trimmers, :as => 'trimmaajat'
   map.resources :kennels, :as => 'kasvattajat'
   map.resources :events , :as => 'tapahtumat'
@@ -10,25 +12,11 @@ ActionController::Routing::Routes.draw do |map|
     :action       => 'show',
     :requirements => { :page => /[a-z]+/ }
 
-  map.connect 'tapahtumat/:id',
-    :controller => 'events',
-    :action => 'show',
-    :requirements => { :id => /[0-9]+/ }
-
-  map.root :controller => 'static'
-
   # The priority is based upon order of creation: first created -> highest priority.
-
-  # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
-  # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }

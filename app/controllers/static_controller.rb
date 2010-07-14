@@ -8,16 +8,13 @@ class StaticController < ApplicationController
   end
 
   def show
-    if params[:page] == 'tapahtumat'
-      @events = Event.all
-    elsif params[:page] == 'kasvattajat'
-      @kennels = Kennel.find(:all, :order => "location DESC")
-    end
-    render params[:page]
+    render :template => params[:page]
   end
 
+protected
+
   def invalid_page
-    redirect_to root_path
+    render :nothing => true, :status => 404
   end
 
 end

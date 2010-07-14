@@ -1,30 +1,28 @@
-<h1>Listing kennels</h1>
+<h2>Kasvattajat</h2>
 
-<table>
-  <tr>
-    <th>Kennel name</th>
-    <th>Owner name</th>
-    <th>Phone</th>
-    <th>Location</th>
-    <th>Email</th>
-    <th>Homepage</th>
-  </tr>
-
-<% @kennels.each do |kennel| %>
-  <tr>
-    <td><%=h kennel.kennel_name %></td>
-    <td><%=h kennel.owner_name %></td>
-    <td><%=h kennel.phone %></td>
-    <td><%=h kennel.location %></td>
-    <td><%=h kennel.email %></td>
-    <td><%=h kennel.homepage %></td>
-    <td><%= link_to 'Show', kennel %></td>
-    <td><%= link_to 'Edit', edit_kennel_path(kennel) %></td>
-    <td><%= link_to 'Destroy', kennel, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% if !@kennels.blank? %>
+  <table id="kennels" cellspacing="0" summary="Listing of all Airedale terrier kennels, who are members of the assosiaction">
+    <thead>
+      <th>Kennel name</th>
+      <th>Location</th>
+      <th>Owner name</th>
+      <th>Phonenumber</th>
+      <th>E-Mail</th>
+      <th>Homepage</th>
+    </thead>
+    <tbody>
+  <% for item in @kennels %>
+    <tr>
+      <td><strong><%= item.kennel_name %></strong></td>
+      <td><em><%= item.location %></em></td>
+      <td><%= item.owner_name %></td>
+      <td><%= item.phone %></td>
+      <td><%= item.email %></td>
+      <td><%= link_to item.homepage %></td>
+    </tr>
+  <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h3>Ei kasvattajia tällä hetkellä!</h3>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New kennel', new_kennel_path %>

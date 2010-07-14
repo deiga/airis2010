@@ -1,10 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :trimmers
 
-  map.resources :kennels
-
-
-  map.resources :events
+  map.resources :trimmers, :as => 'trimmaajat'
+  map.resources :kennels, :as => 'kasvattajat'
+  map.resources :events , :as => 'tapahtumat'
   map.resources :announcements
 
   map.static ':page',
